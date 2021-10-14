@@ -1,0 +1,9 @@
+extends ../../layout.jade
+
+block contenido   
+    h1 EDITAR IMAGEN
+    form(action="/app/imagenes/#{imagen._id}?_method=PUT", method="post")
+        //- input(type="hidden", value="PUT", name="_method")
+        input(type="text", name="title", placeholder="title" value="#{imagen.title}")
+        input(type="file", name="archivo", id="archivo")
+        input(type="submit", value="actualizar")

@@ -1,0 +1,14 @@
+extends ../layout.jade
+block contenido
+    p Hola #{user.email}
+
+    for imagen in imagenes
+
+        h1= imagen.title
+
+        img(src="/public/imagenes/#{imagen._id}.#{imagen.extension}")
+
+        if(typeof imagen.creator != 'undefined')
+            p Por #{ imagen.creator.email }
+    
+    script(src="/public/js/client.js")
